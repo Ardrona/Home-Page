@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import ParticleBackground from '@/components/ui/ParticleBackground';
 import heroImage from '@/assets/ardrona-hero.jpg';
 
 const Hero = () => {
@@ -14,32 +15,41 @@ const Hero = () => {
           alt="Ardrona drone delivery network over NYC"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-slate-900/60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/60 to-slate-900/80" />
       </div>
+
+      {/* Particle Background */}
+      <ParticleBackground 
+        particleCount={30}
+        color="rgba(147, 227, 93, 0.4)"
+        className="opacity-60"
+      />
 
       {/* Content */}
       <div className="relative z-10 container-ardrona text-center">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto animate-fade-in">
           {/* NYC Badge */}
-          <Badge variant="secondary" className="mb-8 bg-white/10 text-white border-white/20 backdrop-blur-sm">
+          <Badge variant="secondary" className="mb-8 glass-effect text-white border-white/30 animate-float">
             🗽 NYC First • Expanding Soon
           </Badge>
 
           {/* Main Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold mb-8 leading-tight">
-            <span className="text-white">Airborne.</span>{' '}
-            <span className="text-white">Anytime.</span>{' '}
-            <span className="text-gradient-primary">Anywhere.</span>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold mb-8 leading-tight animate-slide-up">
+            <span className="text-white drop-shadow-2xl">Airborne.</span>{' '}
+            <span className="text-white drop-shadow-2xl">Anytime.</span>{' '}
+            <span className="text-gradient-primary animate-shimmer bg-gradient-to-r from-primary via-primary-light to-primary bg-[length:200%_100%]">
+              Anywhere.
+            </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl sm:text-2xl lg:text-3xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-xl sm:text-2xl lg:text-3xl text-slate-200 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in opacity-90">
             Ardrona is the drone delivery marketplace and logistics network—starting in NYC—connecting products, customers, and last-mile operations with sustainable autonomous flight.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button className="btn-hero group">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-scale-in">
+            <Button className="btn-hero group animate-pulse-glow">
               Get Started
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
@@ -49,30 +59,43 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Stats */}
+          {/* Rich Stats with Enhanced Styling */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 pt-16 border-t border-white/20">
-            <div className="text-center">
-              <div className="text-3xl font-heading font-bold text-primary mb-2">2-5 min</div>
+            <div className="text-center group">
+              <div className="text-4xl font-heading font-bold text-primary mb-2 animate-bounce-subtle group-hover:scale-110 transition-transform duration-300">
+                2-5 min
+              </div>
               <div className="text-slate-300 font-medium">Average Delivery</div>
+              <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2"></div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-heading font-bold text-primary mb-2">Zero</div>
+            <div className="text-center group">
+              <div className="text-4xl font-heading font-bold text-primary mb-2 animate-bounce-subtle group-hover:scale-110 transition-transform duration-300" style={{animationDelay: '0.2s'}}>
+                Zero
+              </div>
               <div className="text-slate-300 font-medium">Carbon Emissions</div>
+              <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2"></div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-heading font-bold text-primary mb-2">24/7</div>
+            <div className="text-center group">
+              <div className="text-4xl font-heading font-bold text-primary mb-2 animate-bounce-subtle group-hover:scale-110 transition-transform duration-300" style={{animationDelay: '0.4s'}}>
+                24/7
+              </div>
               <div className="text-slate-300 font-medium">Operations</div>
+              <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2"></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Enhanced Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center backdrop-blur-sm">
+          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-bounce-subtle"></div>
         </div>
       </div>
+
+      {/* Ambient Glow Effects */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse opacity-20"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse opacity-20" style={{animationDelay: '1s'}}></div>
     </section>
   );
 };
