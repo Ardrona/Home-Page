@@ -1,5 +1,6 @@
 import React from 'react';
 import { Twitter, Linkedin, Github, Mail } from 'lucide-react';
+import Logo from '../brand/Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -35,7 +36,7 @@ const Footer = () => {
     { name: 'Twitter', icon: Twitter, href: '#twitter' },
     { name: 'LinkedIn', icon: Linkedin, href: '#linkedin' },
     { name: 'GitHub', icon: Github, href: '#github' },
-    { name: 'Email', icon: Mail, href: 'mailto:hello@ardrona.com' },
+    { name: 'Email', icon: Mail, href: 'mailto:admin@ardrona.com' },
   ];
 
   return (
@@ -47,9 +48,9 @@ const Footer = () => {
             {/* Brand */}
             <div className="lg:col-span-2">
               <div className="flex items-center mb-6">
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3">
-                  <span className="text-primary-foreground font-bold text-xl">A</span>
-                </div>
+                  <Logo variant="symbol" size="xl" className="h-9 w-9 text-white" />
+                {/* <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3">
+                </div> */}
                 <span className="font-heading font-bold text-2xl">Ardrona</span>
               </div>
               <p className="text-slate-300 leading-relaxed mb-6 max-w-md">

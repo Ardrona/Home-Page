@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Logo } from '@/components/brand/Logo';
-import { CalEmbed } from '@/components/shared/CalEmbed';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { CalModal } from '@/components/shared/CalModal';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,12 +16,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop-blur-xl border-b border-slate-200 shadow-lg">
       <div className="container-ardrona">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Logo variant="transparent" size="md" className="h-10" />
+            <Logo variant="symbol" size="xl" className="h-10" />
           </div>
 
           {/* Desktop Navigation */}
@@ -35,9 +35,13 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <CalEmbed variant="default" className="btn-primary ml-4">
+            <CalModal 
+              variant="outline" 
+              size="lg"
+              className="btn-primary ml-4 max-w-fit"
+            >
               Get Started
-            </CalEmbed>
+            </CalModal>
           </div>
 
           {/* Mobile menu button */}
@@ -61,7 +65,7 @@ const Navbar = () => {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="lg:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-b border-slate-200">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white/30 backdrop-blur-xl border-b border-slate-200 shadow-lg">
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -73,9 +77,13 @@ const Navbar = () => {
               </a>
             ))}
             <div className="pt-4">
-              <CalEmbed variant="default" className="btn-primary w-full">
+              <CalModal 
+                variant="outline" 
+                size="lg"
+                className="btn-primary w-full max-w-fit mx-auto"
+              >
                 Get Started
-              </CalEmbed>
+              </CalModal>
             </div>
           </div>
         </div>
