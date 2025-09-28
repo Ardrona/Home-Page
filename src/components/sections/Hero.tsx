@@ -3,10 +3,11 @@ import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ParticleBackground from '@/components/ui/ParticleBackground';
-import { CalEmbed } from '@/components/shared/CalEmbed';
+import { CalModal } from '@/components/shared/CalModal';
 import { CustomerSignup } from '@/components/shared/CustomerSignup';
-import { NYCBadge } from '@/components/brand/BrandBadge';
+import BrandBadge, { NYCBadge } from '@/components/brand/BrandBadge';
 import heroImage from '@/assets/ardrona-hero.jpg';
+import { cn } from '@/lib/utils';
 
 const Hero = () => {
   return (
@@ -29,7 +30,7 @@ const Hero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 container-ardrona text-center">
+      <div className="relative z-10 container-ardrona text-center my-20 py-20">
         <div className="max-w-6xl mx-auto animate-fade-in">
           {/* NYC Badge */}
           <NYCBadge className="mb-8 glass-effect text-white border-white/30" />
@@ -51,17 +52,30 @@ const Hero = () => {
           {/* CTA Section - Two Rows */}
           <div className="space-y-12 animate-scale-in">
             {/* Business CTA Row */}
-            <div className="text-center">
-              <h3 className="text-2xl font-heading font-semibold text-white mb-6">Ready to Launch Your Business?</h3>
-              <CalEmbed 
-                variant="default"
-                size="lg"
-                className="btn-hero group animate-pulse-glow px-12 py-5 text-lg font-semibold"
+            <div className="flex flex-col items-center gap-6">
+              <div className="flex items-center gap-2 mb-2">
+              <h3 className="text-2xl font-heading font-semibold text-white">
+                Own a business in
+              </h3>
+              <BrandBadge className={cn('animate-float', 'text-white')}>
+                    🗽 NYC
+                </BrandBadge>
+              <span className="text-2xl font-heading font-semibold text-white">?</span>
+              </div>
+
+              <CalModal
+              variant="outline"
+              size="lg"
+              className="btn-hero group animate-pulse-glow px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-2xl transition-all duration-400 max-w-fit"
+              calLink="ayaan-kaifullah-ppsvgy/30min"
               >
-                Get Started for Business
-              </CalEmbed>
+              Deliver by Drone <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </CalModal>
             </div>
-            
+            {/* Divider Section */}
+            <div className="flex items-center justify-center py-5">
+              <div className="w-32 h-1 bg-gradient-to-r from-primary via-primary-light to-primary rounded-full opacity-60" />
+            </div>
             {/* Customer Signup Row */}
             <div className="flex justify-center">
               <div className="w-full max-w-lg">

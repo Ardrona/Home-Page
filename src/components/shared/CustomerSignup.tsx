@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Plane, MapPin, Mail, AlertCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { z } from 'zod';
+import Logo from '../brand/Logo';
 
 // Input validation schema
 const signupSchema = z.object({
@@ -93,15 +94,11 @@ export const CustomerSignup: React.FC<CustomerSignupProps> = ({ className }) => 
   return (
     <Card className={className}>
       <CardHeader className="text-center">
-        <div className="flex justify-center mb-4">
-          <div className="relative">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-              <Plane className="w-8 h-8 text-primary" />
-            </div>
-            <div className="absolute -top-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-white text-xs">✨</span>
-            </div>
-          </div>
+        <div className="flex justify-center mb-6">
+          <Logo
+            variant="transparent"
+            size="lg"
+            className="h-32 w-auto max-w-xs"           />
         </div>
         <CardTitle className="text-2xl font-heading">Be the First to Order by Drone</CardTitle>
         <CardDescription className="text-base">

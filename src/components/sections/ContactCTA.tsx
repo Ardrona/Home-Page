@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { CalModal } from '@/components/shared/CalModal';
 
 const ContactCTA = () => {
   return (
@@ -25,7 +26,7 @@ const ContactCTA = () => {
                 </div>
                 <div>
                   <div className="font-medium text-white">Email</div>
-                  <div className="text-slate-300">hello@ardrona.com</div>
+                  <div className="text-slate-300">admin@ardrona.com</div>
                 </div>
               </div>
               
@@ -35,7 +36,7 @@ const ContactCTA = () => {
                 </div>
                 <div>
                   <div className="font-medium text-white">Phone</div>
-                  <div className="text-slate-300">+1 (555) ARDRONA</div>
+                  <div className="text-slate-300">+1 (929) 732-0862</div>
                 </div>
               </div>
               
@@ -51,13 +52,14 @@ const ContactCTA = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="btn-hero group">
-                Get in Touch
+              <CalModal 
+                variant="outline" 
+                size="lg"
+                className="btn-hero group max-w-fit"
+              >
+                Get on a Call 
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button className="btn-hero-ghost">
-                Schedule a Call
-              </Button>
+              </CalModal>
             </div>
           </div>
 

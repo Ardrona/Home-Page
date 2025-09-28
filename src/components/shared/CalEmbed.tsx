@@ -23,7 +23,7 @@ interface CalEmbedProps {
 
 export const CalEmbed: React.FC<CalEmbedProps> = ({
   calLink = "ayaan-kaifullah-ppsvgy/30min",
-  namespace = "30min",
+  namespace = "15min",
   children = "Schedule a Call",
   variant = "default",
   size = "default",
@@ -87,7 +87,7 @@ export const CalEmbed: React.FC<CalEmbedProps> = ({
       data-cal-namespace={namespace}
       data-cal-config='{"layout":"week_view","theme":"light"}'
     >
-      <Calendar className="mr-2 h-4 w-4" />
+      <Calendar className="mr-2 h-2 w-2" />
       {children}
     </Button>
   );

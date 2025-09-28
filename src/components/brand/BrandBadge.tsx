@@ -22,7 +22,7 @@ export const BrandBadge: React.FC<BrandBadgeProps> = ({
       className={cn(
         'font-medium px-4 py-2 rounded-full',
         'border border-primary/20 bg-primary/10 text-primary',
-        'hover:bg-primary/20 transition-all duration-300',
+        'hover:bg-primary/20 transition-all duration-400',
         className
       )}
     >
