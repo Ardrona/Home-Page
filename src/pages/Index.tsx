@@ -7,6 +7,7 @@ import MarketplacePreview from '@/components/sections/MarketplacePreview';
 import FleetService from '@/components/sections/FleetService';
 import ContactCTA from '@/components/sections/ContactCTA';
 import Footer from '@/components/layout/Footer';
+import AISection from '@/components/shared/AISection';
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
         <Features />
         <HowItWorks />
         <MarketplacePreview />
+        <AISection />
         <FleetService />
         <ContactCTA />
       </main>

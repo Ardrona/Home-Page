@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Logo } from '@/components/brand/Logo';
+import { CalEmbed } from '@/components/shared/CalEmbed';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -19,14 +21,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="flex items-center">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center mr-3">
-                <span className="text-primary-foreground font-bold text-lg">A</span>
-              </div>
-              <span className="font-heading font-bold text-xl text-slate-900">
-                Ardrona
-              </span>
-            </div>
+            <Logo variant="transparent" size="md" className="h-10" />
           </div>
 
           {/* Desktop Navigation */}
@@ -40,9 +35,9 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <Button className="btn-primary ml-4">
+            <CalEmbed variant="default" className="btn-primary ml-4">
               Get Started
-            </Button>
+            </CalEmbed>
           </div>
 
           {/* Mobile menu button */}
@@ -78,9 +73,9 @@ const Navbar = () => {
               </a>
             ))}
             <div className="pt-4">
-              <Button className="btn-primary w-full">
+              <CalEmbed variant="default" className="btn-primary w-full">
                 Get Started
-              </Button>
+              </CalEmbed>
             </div>
           </div>
         </div>
@@ -89,4 +84,5 @@ const Navbar = () => {
   );
 };
 
+export { Navbar };
 export default Navbar;

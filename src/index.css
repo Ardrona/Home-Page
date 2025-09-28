@@ -9,10 +9,10 @@
 @layer base {
   :root {
     /* Brand Colors - Ardrona Technologies */
-    --primary: 93 77% 63%; /* #93E35D - Ardrona Brand Green */
+    --primary: 84 96% 48%; /* #8BC34A - Ardrona Brand Lime Green */
     --primary-foreground: 0 0% 4%; /* Near black for contrast */
-    --primary-hover: 93 77% 58%; /* Darker green for hover states */
-    --primary-light: 93 77% 95%; /* Very light green for backgrounds */
+    --primary-hover: 84 96% 43%; /* Darker green for hover states */
+    --primary-light: 84 96% 95%; /* Very light green for backgrounds */
     
     /* Neutral Palette - Tesla-inspired */
     --background: 0 0% 100%; /* Pure white */
@@ -66,7 +66,7 @@
     --transition-luxury: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     
     /* Rich Gradients */
-    --gradient-rich-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-hover)) 50%, hsl(var(--primary)) 100%);
+    --gradient-rich-primary: linear-gradient(135deg, hsl(84 96% 48%) 0%, hsl(84 96% 43%) 50%, hsl(84 96% 48%) 100%);
     --gradient-rich-dark: linear-gradient(135deg, hsl(var(--slate-900)) 0%, hsl(var(--slate-800)) 25%, hsl(var(--slate-900)) 50%, hsl(var(--slate-800)) 75%, hsl(var(--slate-900)) 100%);
     --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
     --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
@@ -75,7 +75,7 @@
     --shadow-rich: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     --shadow-luxury: 0 32px 64px -12px rgba(0, 0, 0, 0.35);
     --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
-    --shadow-colored: 0 20px 40px -8px hsl(var(--primary) / 0.3);
+    --shadow-colored: 0 20px 40px -8px hsl(84 96% 48% / 0.3);
     
     /* Rich Textures */
     --noise-pattern: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
@@ -342,8 +342,8 @@
 }
 
 @keyframes glow {
-  from { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
-  to { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+  from { box-shadow: 0 0 20px hsl(84 96% 48% / 0.3); }
+  to { box-shadow: 0 0 40px hsl(84 96% 48% / 0.6); }
 }
 
 @keyframes shimmer {

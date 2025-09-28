@@ -3,6 +3,9 @@ import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ParticleBackground from '@/components/ui/ParticleBackground';
+import { CalEmbed } from '@/components/shared/CalEmbed';
+import { CustomerSignup } from '@/components/shared/CustomerSignup';
+import { NYCBadge } from '@/components/brand/BrandBadge';
 import heroImage from '@/assets/ardrona-hero.jpg';
 
 const Hero = () => {
@@ -21,7 +24,7 @@ const Hero = () => {
       {/* Particle Background */}
       <ParticleBackground 
         particleCount={30}
-        color="rgba(147, 227, 93, 0.4)"
+        color="rgba(139, 195, 74, 0.4)"
         className="opacity-60"
       />
 
@@ -29,9 +32,7 @@ const Hero = () => {
       <div className="relative z-10 container-ardrona text-center">
         <div className="max-w-6xl mx-auto animate-fade-in">
           {/* NYC Badge */}
-          <Badge variant="secondary" className="mb-8 glass-effect text-white border-white/30 animate-float">
-            🗽 NYC First • Expanding Soon
-          </Badge>
+          <NYCBadge className="mb-8 glass-effect text-white border-white/30" />
 
           {/* Main Headline */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold mb-8 leading-tight animate-slide-up">
@@ -47,16 +48,22 @@ const Hero = () => {
             Ardrona is the drone delivery marketplace and logistics network—starting in NYC—connecting products, customers, and last-mile operations with sustainable autonomous flight.
           </p>
 
-          {/* CTAs */}
+          {/* CTA Buttons with improved spacing */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-scale-in">
-            <Button className="btn-hero group animate-pulse-glow">
-              Get Started
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button className="btn-hero-ghost group">
-              <Play className="mr-2 h-5 w-5" />
-              Learn More
-            </Button>
+            <CalEmbed 
+              variant="default"
+              size="lg"
+              className="btn-hero group animate-pulse-glow px-12 py-5 text-lg font-semibold"
+            >
+              Get Started for Business
+            </CalEmbed>
+            
+            <div className="text-center">
+              <h3 className="text-lg font-semibold text-white mb-4">Customer? Join the Waitlist</h3>
+              <div className="flex justify-center">
+                <CustomerSignup className="max-w-md" />
+              </div>
+            </div>
           </div>
 
           {/* Rich Stats with Enhanced Styling */}
