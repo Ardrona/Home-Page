@@ -46,6 +46,13 @@ const aiFeatures = [
     description: "AI predicts delivery patterns to optimize fleet positioning and availability",
     metric: "2x efficiency",
     color: "from-orange-500 to-red-400"
+  },
+  {
+    icon: MapPin,
+    title: "Dark Store Network",
+    description: "AI-managed micro-fulfillment centers in every locality for ultra-fast delivery",
+    metric: "< 60 seconds",
+    color: "from-emerald-500 to-teal-400"
   }
 ];
 
@@ -133,9 +140,9 @@ export const AISection: React.FC = () => {
         </div>
 
         {/* Interactive AI Features */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Feature List */}
-          <div className="space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          {/* Feature List - Spans 2 columns */}
+          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
             {aiFeatures.map((feature, index) => {
               const IconComponent = feature.icon;
               const isActive = index === activeFeature;
@@ -184,8 +191,8 @@ export const AISection: React.FC = () => {
             })}
           </div>
 
-          {/* Visual Display */}
-          <div className="relative">
+          {/* Visual Display - Single column */}
+          <div className="relative lg:col-span-1">
             <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 text-white overflow-hidden">
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-10">

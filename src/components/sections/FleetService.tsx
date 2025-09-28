@@ -27,8 +27,24 @@ const FleetService = () => {
   ];
 
   return (
-    <section className="section-padding bg-white" id="fleet">
-      <div className="container-ardrona">
+    <section className="section-padding bg-white relative" id="fleet">
+      {/* Coming Soon Overlay */}
+      <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm z-10 flex items-center justify-center">
+        <div className="text-center text-white px-8">
+          <div className="text-5xl sm:text-6xl font-heading font-bold mb-6 text-gradient-primary">
+            Coming Soon
+          </div>
+          <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto">
+            Fleet as a Service launching Q2 2025
+          </p>
+          <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-slate-300 border border-white/20">
+            <span className="w-2 h-2 bg-primary rounded-full animate-pulse mr-3"></span>
+            Get notified when we launch
+          </div>
+        </div>
+      </div>
+      
+      <div className="container-ardrona relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>

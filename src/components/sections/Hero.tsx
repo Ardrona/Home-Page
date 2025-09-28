@@ -48,20 +48,24 @@ const Hero = () => {
             Ardrona is the drone delivery marketplace and logistics network—starting in NYC—connecting products, customers, and last-mile operations with sustainable autonomous flight.
           </p>
 
-          {/* CTA Buttons with improved spacing */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-scale-in">
-            <CalEmbed 
-              variant="default"
-              size="lg"
-              className="btn-hero group animate-pulse-glow px-12 py-5 text-lg font-semibold"
-            >
-              Get Started for Business
-            </CalEmbed>
-            
+          {/* CTA Section - Two Rows */}
+          <div className="space-y-12 animate-scale-in">
+            {/* Business CTA Row */}
             <div className="text-center">
-              <h3 className="text-lg font-semibold text-white mb-4">Customer? Join the Waitlist</h3>
-              <div className="flex justify-center">
-                <CustomerSignup className="max-w-md" />
+              <h3 className="text-2xl font-heading font-semibold text-white mb-6">Ready to Launch Your Business?</h3>
+              <CalEmbed 
+                variant="default"
+                size="lg"
+                className="btn-hero group animate-pulse-glow px-12 py-5 text-lg font-semibold"
+              >
+                Get Started for Business
+              </CalEmbed>
+            </div>
+            
+            {/* Customer Signup Row */}
+            <div className="flex justify-center">
+              <div className="w-full max-w-lg">
+                <CustomerSignup />
               </div>
             </div>
           </div>
