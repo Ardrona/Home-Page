@@ -16,7 +16,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop-blur-xl border-b border-slate-200 shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/20 backdrop-blur-2xl border-b border-white/20 shadow-lg hover-glow transition-all duration-500">
+      <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/5 to-white/10 pointer-events-none"></div>
       <div className="container-ardrona">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}

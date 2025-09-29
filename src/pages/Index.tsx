@@ -8,7 +8,7 @@ import FleetService from '@/components/sections/FleetService';
 import ContactCTA from '@/components/sections/ContactCTA';
 import Footer from '@/components/layout/Footer';
 import AISection from '@/components/shared/AISection';
-import ScrollIndicator from '@/components/ui/ScrollIndicator';
+import CursorGlow from '@/components/ui/CursorGlow';
 import { useScrollAnimation, useScrollSnap } from '@/hooks/use-scroll-snap';
 
 const Index = () => {
@@ -23,22 +23,11 @@ const Index = () => {
   const contactRef = useScrollAnimation();
   const footerRef = useScrollAnimation();
 
-  const sections = [
-    'Hero',
-    'Features',
-    'How It Works',
-    'Marketplace',
-    'AI Technology',
-    'Fleet Service',
-    'Contact',
-    'Footer'
-  ];
-
   return (
-    <div className="min-h-screen scroll-smooth">
+    <div className="min-h-screen">
+      <CursorGlow />
       <Navbar />
-      <ScrollIndicator sections={sections} />
-      <main className="scroll-snap-container">
+      <main className="scroll-snap-container scroll-smooth">
         <section 
           ref={heroRef}
           className="scroll-snap-section section-transition section-fade-in"

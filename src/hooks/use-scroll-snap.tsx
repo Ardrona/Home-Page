@@ -33,16 +33,18 @@ export const useScrollAnimation = () => {
   return ref;
 };
 
-export const useScrollSnap = (mainRef: React.RefObject<HTMLElement>) => {
+export const useScrollSnap = () => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      const main = mainRef.current;
+      const main = document.querySelector('main');
       if (!main) return;
 
       const sections = main.querySelectorAll('section');
       const currentScrollTop = main.scrollTop;
       const sectionHeight = typeof window !== 'undefined' ? window.innerHeight : 0;
-      const currentSectionIndex = sectionHeight > 0 ? Math.round(currentScrollTop / sectionHeight) : 0;
+      const currentSectionIndex = sectionHeight > 0 ? Math.floor(currentScrollTop / sectionHeight) : 0;
+      
+      console.log(`⌨️ Keyboard navigation: scrollTop=${currentScrollTop}, sectionHeight=${sectionHeight}, currentIndex=${currentSectionIndex}`);
 
       switch (e.key) {
         case 'ArrowDown':
@@ -84,5 +86,5 @@ export const useScrollSnap = (mainRef: React.RefObject<HTMLElement>) => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [mainRef]);
+  }, []);
 };

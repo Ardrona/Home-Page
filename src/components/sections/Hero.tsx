@@ -86,26 +86,26 @@ const Hero = () => {
 
           {/* Rich Stats with Enhanced Styling */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 pt-16 border-t border-white/20">
-            <div className="text-center group">
-              <div className="text-4xl font-heading font-bold text-primary mb-2 animate-bounce-subtle group-hover:scale-110 transition-transform duration-300">
+            <div className="text-center group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover-lift hover-glow">
+              <div className="text-4xl font-heading font-bold text-primary mb-2 animate-bounce-subtle group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
                 2-5 min
               </div>
               <div className="text-slate-300 font-medium">Average Delivery</div>
-              <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2"></div>
+              <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2 group-hover:w-16 transition-all duration-300"></div>
             </div>
-            <div className="text-center group">
-              <div className="text-4xl font-heading font-bold text-primary mb-2 animate-bounce-subtle group-hover:scale-110 transition-transform duration-300" style={{animationDelay: '0.2s'}}>
+            <div className="text-center group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover-lift hover-glow">
+              <div className="text-4xl font-heading font-bold text-primary mb-2 animate-bounce-subtle group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" style={{animationDelay: '0.2s'}}>
                 Zero
               </div>
               <div className="text-slate-300 font-medium">Carbon Emissions</div>
-              <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2"></div>
+              <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2 group-hover:w-16 transition-all duration-300"></div>
             </div>
-            <div className="text-center group">
-              <div className="text-4xl font-heading font-bold text-primary mb-2 animate-bounce-subtle group-hover:scale-110 transition-transform duration-300" style={{animationDelay: '0.4s'}}>
+            <div className="text-center group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover-lift hover-glow">
+              <div className="text-4xl font-heading font-bold text-primary mb-2 animate-bounce-subtle group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" style={{animationDelay: '0.4s'}}>
                 24/7
               </div>
               <div className="text-slate-300 font-medium">Operations</div>
-              <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2"></div>
+              <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2 group-hover:w-16 transition-all duration-300"></div>
             </div>
           </div>
         </div>
