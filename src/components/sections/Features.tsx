@@ -101,12 +101,12 @@ const Features = () => {
         {/* Enhanced Call to Action */}
         <div className="text-center mt-20">
           <div className="inline-flex items-center justify-center">
-            <button className="btn-primary group animate-float">
+            {/* <button className="btn-primary group animate-float">
               {descriptions.features.cta}
               <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

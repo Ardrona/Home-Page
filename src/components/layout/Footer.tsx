@@ -107,9 +107,9 @@ const Footer = () => {
               <span className="flex items-center">
                 🗽 Proudly serving NYC
               </span>
-              <span className="flex items-center">
+              {/* <span className="flex items-center">
                 ✈️ FAA Certified
-              </span>
+              </span> */}
             </div>
           </div>
         </div>
