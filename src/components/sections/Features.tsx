@@ -2,34 +2,37 @@ import React from 'react';
 import { ShoppingBag, Building2, Zap, Settings } from 'lucide-react';
 import droneIcon from '@/assets/drone-icon.jpg';
 import logisticsIcon from '@/assets/logistics-icon.jpg';
+import { useDescriptions } from '@/hooks/use-descriptions';
 
 const Features = () => {
+  const descriptions = useDescriptions();
+  
   const features = [
     {
       icon: ShoppingBag,
-      title: 'Marketplace',
-      description: 'Order from curated sellers for fast drone delivery.',
+      title: descriptions.features.items[0].title,
+      description: descriptions.features.items[0].description,
       image: null,
       gradient: 'from-blue-500/20 to-blue-600/10',
     },
     {
       icon: Building2,
-      title: 'Business Listings',
-      description: 'List products and reach local customers.',
+      title: descriptions.features.items[1].title,
+      description: descriptions.features.items[1].description,
       image: null,
       gradient: 'from-purple-500/20 to-purple-600/10',
     },
     {
       icon: Zap,
-      title: 'Drone Delivery',
-      description: 'Safe, fast, and sustainable last-mile.',
+      title: descriptions.features.items[2].title,
+      description: descriptions.features.items[2].description,
       image: droneIcon,
       gradient: 'from-primary/20 to-primary/10',
     },
     {
       icon: Settings,
-      title: 'Fleet as a Service',
-      description: 'Use Ardrona\'s logistics layer in your own apps.',
+      title: descriptions.features.items[3].title,
+      description: descriptions.features.items[3].description,
       image: logisticsIcon,
       gradient: 'from-orange-500/20 to-orange-600/10',
     },
@@ -40,10 +43,16 @@ const Features = () => {
       <div className="container-ardrona">
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-slate-900 mb-6">
-            Complete Drone <span className="text-gradient-primary">Ecosystem</span>
+            {descriptions.features.title.split(' ').map((word, index) => 
+              word === 'Ecosystem' ? (
+                <span key={index} className="text-gradient-primary">{word}</span>
+              ) : (
+                <span key={index}>{word} </span>
+              )
+            )}
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            From marketplace to logistics, we provide the complete infrastructure for autonomous aerial delivery
+            {descriptions.features.subtitle}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-8"></div>
         </div>
@@ -93,7 +102,7 @@ const Features = () => {
         <div className="text-center mt-20">
           <div className="inline-flex items-center justify-center">
             <button className="btn-primary group animate-float">
-              Explore All Features
+              {descriptions.features.cta}
               <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

@@ -1,28 +1,31 @@
 import React from 'react';
 import { Code, BarChart3, Shield, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useDescriptions } from '@/hooks/use-descriptions';
 
 const FleetService = () => {
+  const descriptions = useDescriptions();
+  
   const features = [
     {
       icon: Code,
-      title: 'Reliable APIs',
-      description: 'RESTful APIs with 99.9% uptime for seamless integration',
+      title: descriptions.fleet.features[0].title,
+      description: descriptions.fleet.features[0].description,
     },
     {
       icon: BarChart3,
-      title: 'Smart Routing',
-      description: 'AI-powered optimization for the fastest delivery routes',
+      title: descriptions.fleet.features[1].title,
+      description: descriptions.fleet.features[1].description,
     },
     {
       icon: Shield,
-      title: 'Full Compliance',
-      description: 'FAA-certified operations with comprehensive insurance coverage',
+      title: descriptions.fleet.features[2].title,
+      description: descriptions.fleet.features[2].description,
     },
     {
       icon: Globe,
-      title: 'Real-time Telemetry',
-      description: 'Live tracking and analytics for complete visibility',
+      title: descriptions.fleet.features[3].title,
+      description: descriptions.fleet.features[3].description,
     },
   ];
 
@@ -30,17 +33,13 @@ const FleetService = () => {
     <section className="section-padding bg-white relative" id="fleet">
       {/* Coming Soon Overlay */}
       <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm z-10 flex items-center justify-center">
-        <div className="text-center text-white px-8">
-          <div className="text-5xl sm:text-6xl font-heading font-bold mb-6 text-gradient-primary">
-            Coming Soon
+        <div className="text-center text-white p-8 max-w-2xl">
+          <div className="text-6xl font-heading font-bold mb-6">
+            {descriptions.fleet.comingSoon}
           </div>
-          <p className="text-xl sm:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Fleet as a Service launching Q2 2025
+          <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+            {descriptions.fleet.description}
           </p>
-          <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-slate-300 border border-white/20">
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse mr-3"></span>
-            Get notified when we launch
-          </div>
         </div>
       </div>
       
@@ -49,7 +48,7 @@ const FleetService = () => {
           {/* Content */}
           <div>
             <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
-              🚀 Fleet as a Service
+              🚀 {descriptions.fleet.title}
             </div>
             
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-slate-900 mb-6">
@@ -57,8 +56,7 @@ const FleetService = () => {
             </h2>
             
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Integrate drone logistics into your marketplace or storefront with Ardrona's Fleet as a Service. 
-              Reliable APIs, routing, compliance, and telemetry—all in one platform.
+              {descriptions.fleet.subtitle}
             </p>
 
             <div className="space-y-6 mb-8">
@@ -84,10 +82,10 @@ const FleetService = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="btn-primary">
-                Request a Demo
+                {descriptions.fleet.cta.demo}
               </Button>
               <Button className="btn-ghost">
-                View Documentation
+                {descriptions.fleet.cta.docs}
               </Button>
             </div>
           </div>

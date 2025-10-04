@@ -2,8 +2,11 @@ import React from 'react';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CalModal } from '@/components/shared/CalModal';
+import { useDescriptions } from '@/hooks/use-descriptions';
 
 const ContactCTA = () => {
+  const descriptions = useDescriptions();
+  
   return (
     <section className="section-padding bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white" id="contact">
       <div className="container-ardrona">
@@ -11,12 +14,17 @@ const ContactCTA = () => {
           {/* Content */}
           <div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6">
-              Work with <span className="text-gradient-primary">Ardrona</span>
+              {descriptions.contact.title.split('Ardrona').map((part, index) => 
+                index === 0 ? part : (
+                  <span key={index}>
+                    <span className="text-gradient-primary">Ardrona</span>
+                  </span>
+                )
+              )}
             </h2>
             
             <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-              Ready to revolutionize your delivery operations? Let's discuss how Ardrona can transform 
-              your business with cutting-edge drone logistics solutions.
+              {descriptions.contact.subtitle}
             </p>
 
             <div className="space-y-6 mb-8">
