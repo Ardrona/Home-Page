@@ -1,0 +1,302 @@
+{
+  "site": {
+    "title": "Ardrona Technologies - Airborne. Anytime. Anywhere.",
+    "tagline": "Airborne. Anytime. Anywhere.",
+    "description": "Ardrona is building a drone delivery distribution network that connects marketplaces, D2C brands, and last-mile logistics—starting in NYC and expanding to other cities. Sustainable drone delivery operations.",
+    "author": "Ardrona Technologies",
+    "email": "admin@ardrona.com"
+  },
+  "meta": {
+    "og": {
+      "title": "Ardrona Technologies - Drone Delivery & Logistics Network",
+      "description": "Revolutionary drone delivery marketplace and logistics platform. Starting in NYC, connecting products, customers, and last-mile operations with sustainable autonomous flight."
+    },
+    "twitter": {
+      "card": "summary_large_image"
+    }
+  },
+  "logo": {
+    "alt": "Ardrona - Airborne. Anytime. Anywhere."
+  },
+  "navbar": {
+    "items": [
+      { "label": "How it works", "href": "#how-it-works" },
+      { "label": "Marketplace", "href": "#marketplace" },
+      { "label": "Fleet", "href": "#fleet" },
+      { "label": "About", "href": "#about" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "cta": "Get Started"
+  },
+  "hero": {
+    "badge": {
+      "nyc": "🗽 NYC"
+    },
+    "title": {
+      "line1": "Airborne.",
+      "line2": "Anytime.", 
+      "line3": "Anywhere."
+    },
+    "subtitle": "Ardrona is the drone delivery marketplace and logistics network—starting in NYC—connecting products, customers, and last-mile operations with sustainable autonomous flight.",
+    "business": {
+      "question": "Own a business in",
+      "cta": "Deliver by Drone"
+    },
+    "customer": {
+      "signup": "Customer Signup"
+    },
+    "stats": {
+      "delivery": {
+        "value": "2-5 min",
+        "label": "Average Delivery"
+      },
+      "emissions": {
+        "value": "Zero",
+        "label": "Carbon Emissions"
+      },
+      "operations": {
+        "value": "24/7",
+        "label": "Operations"
+      }
+    }
+  },
+  "features": {
+    "title": "Complete Drone Ecosystem",
+    "subtitle": "From marketplace to logistics, we provide the complete infrastructure for autonomous aerial delivery",
+    "items": [
+      {
+        "title": "Marketplace",
+        "description": "Order from curated sellers for fast drone delivery."
+      },
+      {
+        "title": "Business Listings",
+        "description": "List products and reach local customers."
+      },
+      {
+        "title": "Drone Delivery", 
+        "description": "Safe, fast, and sustainable last-mile."
+      },
+      {
+        "title": "Fleet as a Service",
+        "description": "Use Ardrona's logistics layer in your own apps."
+      }
+    ],
+    "cta": "Experience the Future"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Three simple steps to get your products delivered by drone in minutes",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Browse",
+        "description": "Explore products from local businesses and curated sellers in your area."
+      },
+      {
+        "step": "02", 
+        "title": "Order",
+        "description": "Select your items and place your order with secure payment processing."
+      },
+      {
+        "step": "03",
+        "title": "Drone Delivery",
+        "description": "Watch your order arrive by drone in 2-5 minutes with real-time tracking."
+      }
+    ],
+    "cta": "Start Your First Order"
+  },
+  "marketplace": {
+    "title": "Marketplace Preview",
+    "subtitle": "Browse products from local businesses and get them delivered by drone in minutes",
+    "products": [
+      {
+        "name": "Artisan Coffee Beans",
+        "seller": "Brooklyn Roasters",
+        "price": "$24.99",
+        "rating": 4.9,
+        "deliveryTime": "3-5 min",
+        "distance": "0.8 mi"
+      },
+      {
+        "name": "Fresh Organic Produce",
+        "seller": "Green Market NYC", 
+        "price": "$18.50",
+        "rating": 4.8,
+        "deliveryTime": "2-4 min",
+        "distance": "0.5 mi"
+      },
+      {
+        "name": "Tech Accessories",
+        "seller": "Manhattan Electronics",
+        "price": "$45.99",
+        "rating": 4.7,
+        "deliveryTime": "4-6 min", 
+        "distance": "1.2 mi"
+      }
+    ],
+    "cta": "Browse Full Marketplace"
+  },
+  "ai": {
+    "badge": "AI-Powered Intelligence",
+    "title": "The Future of Smart Delivery",
+    "subtitle": "Our advanced AI systems optimize every aspect of drone delivery operations",
+    "features": [
+      {
+        "title": "Smart Route Optimization",
+        "description": "AI-powered flight paths that adapt to weather, traffic, and airspace in real-time",
+        "metric": "40% faster delivery"
+      },
+      {
+        "title": "Precision Landing",
+        "description": "Computer vision ensures safe, accurate delivery to exact locations",
+        "metric": "99.9% accuracy"
+      },
+      {
+        "title": "Predictive Safety", 
+        "description": "Machine learning prevents issues before they happen with real-time monitoring",
+        "metric": "Zero incidents"
+      },
+      {
+        "title": "Demand Forecasting",
+        "description": "AI predicts delivery patterns to optimize fleet positioning and availability",
+        "metric": "2x efficiency"
+      },
+      {
+        "title": "Dark Store Network",
+        "description": "AI-managed micro-fulfillment centers in every locality for ultra-fast delivery",
+        "metric": "< 60 seconds"
+      }
+    ],
+    "liveMetrics": [
+      { "label": "Active Drones", "value": 42 },
+      { "label": "Cities Served", "value": 3 },
+      { "label": "Neural Network Status", "value": "Active" },
+      { "label": "Processing Power", "value": "847 TOPS" },
+      { "label": "Real-time Decisions", "value": "1,200/sec" },
+      { "label": "Mission Success Rate", "value": "99.94%" }
+    ],
+    "cta": "Experience AI-Powered Delivery"
+  },
+  "fleet": {
+    "title": "Fleet as a Service",
+    "subtitle": "Integrate drone delivery into your existing operations with our comprehensive API platform",
+    "comingSoon": "Coming Soon",
+    "description": "Our Fleet as a Service platform is currently in development. We're building the most comprehensive drone logistics API for businesses ready to transform their delivery operations.",
+    "features": [
+      {
+        "title": "Reliable APIs",
+        "description": "RESTful APIs with 99.9% uptime for seamless integration"
+      },
+      {
+        "title": "Smart Routing",
+        "description": "AI-powered optimization for the fastest delivery routes"
+      },
+      {
+        "title": "Full Compliance", 
+        "description": "FAA-certified operations with comprehensive insurance coverage"
+      },
+      {
+        "title": "Real-time Telemetry",
+        "description": "Live tracking and analytics for complete visibility"
+      }
+    ],
+    "cta": {
+      "demo": "Request a Demo",
+      "docs": "View Documentation"
+    }
+  },
+  "contact": {
+    "title": "Work with Ardrona",
+    "subtitle": "Ready to revolutionize your delivery operations? Let's discuss how Ardrona can transform your business with cutting-edge drone logistics solutions.",
+    "info": [
+      {
+        "label": "Email",
+        "value": "hello@ardrona.com",
+        "href": "mailto:hello@ardrona.com"
+      },
+      {
+        "label": "Phone", 
+        "value": "(555) 123-4567",
+        "href": "tel:+15551234567"
+      },
+      {
+        "label": "Office",
+        "value": "New York, NY",
+        "href": "#"
+      }
+    ],
+    "cta": "Schedule a Call"
+  },
+  "footer": {
+    "brand": {
+      "name": "Ardrona",
+      "description": "Building the future of drone delivery and logistics—starting in NYC and expanding to revolutionize how products move through cities."
+    },
+    "links": {
+      "Product": [
+        { "name": "Marketplace", "href": "#marketplace" },
+        { "name": "Fleet Service", "href": "#fleet" },
+        { "name": "Pricing", "href": "#pricing" },
+        { "name": "API Documentation", "href": "#docs" }
+      ],
+      "Company": [
+        { "name": "About", "href": "#about" },
+        { "name": "Careers", "href": "#careers" },
+        { "name": "Blog", "href": "#blog" },
+        { "name": "Press", "href": "#press" }
+      ],
+      "Resources": [
+        { "name": "Help Center", "href": "#help" },
+        { "name": "Safety Guidelines", "href": "#safety" },
+        { "name": "Compliance", "href": "#compliance" },
+        { "name": "Status", "href": "#status" }
+      ],
+      "Legal": [
+        { "name": "Privacy Policy", "href": "#privacy" },
+        { "name": "Terms of Service", "href": "#terms" },
+        { "name": "Cookie Policy", "href": "#cookies" },
+        { "name": "Security", "href": "#security" }
+      ]
+    },
+    "social": [
+      { "name": "Twitter", "href": "#twitter" },
+      { "name": "LinkedIn", "href": "#linkedin" },
+      { "name": "GitHub", "href": "#github" },
+      { "name": "Email", "href": "mailto:admin@ardrona.com" }
+    ],
+    "newsletter": {
+      "title": "Stay Updated",
+      "subtitle": "Get the latest updates on drone delivery technology and market expansion.",
+      "placeholder": "Enter your email",
+      "cta": "Subscribe"
+    },
+    "copyright": "© {year} Ardrona Technologies. All rights reserved.",
+    "legal": [
+      { "name": "Privacy", "href": "#privacy" },
+      { "name": "Terms", "href": "#terms" },
+      { "name": "Cookies", "href": "#cookies" }
+    ]
+  },
+  "buttons": {
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "browseMarketplace": "Browse Full Marketplace",
+    "startOrder": "Start Your First Order",
+    "requestDemo": "Request a Demo",
+    "viewDocs": "View Documentation",
+    "scheduleCall": "Schedule a Call",
+    "subscribe": "Subscribe",
+    "deliverByDrone": "Deliver by Drone"
+  },
+  "badges": {
+    "aiPowered": "AI-Powered Intelligence",
+    "comingSoon": "Coming Soon",
+    "nyc": "🗽 NYC"
+  },
+  "placeholders": {
+    "email": "Enter your email",
+    "name": "Your name", 
+    "company": "Company name",
+    "message": "Tell us about your project"
+  }
+}
