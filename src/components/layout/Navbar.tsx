@@ -3,6 +3,9 @@ import { Logo } from '@/components/brand/Logo';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CalModal } from '@/components/shared/CalModal';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
+
+
 import { useDescriptions } from '@/hooks/use-descriptions';
 
 const Navbar = () => {
@@ -39,6 +42,12 @@ const Navbar = () => {
             >
               {descriptions.navbar.cta}
             </CalModal>
+            <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
           </div>
 
           {/* Mobile menu button */}
