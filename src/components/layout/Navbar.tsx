@@ -6,17 +6,13 @@ import { CalModal } from '@/components/shared/CalModal';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
 
+import { useDescriptions } from '@/hooks/use-descriptions';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const descriptions = useDescriptions();
 
-  const navItems = [
-    { label: 'How it works', href: '#how-it-works' },
-    { label: 'Marketplace', href: '#marketplace' },
-    { label: 'Fleet', href: '#fleet' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' },
-  ];
+  const navItems = descriptions.navbar.items;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/20 backdrop-blur-2xl border-b border-white/20 shadow-lg hover-glow transition-all duration-500">
@@ -25,7 +21,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Logo variant="symbol" size="xl" className="h-10" />
+            <Logo variant="symbol" size="lg" />
           </div>
 
           {/* Desktop Navigation */}
@@ -44,7 +40,7 @@ const Navbar = () => {
               size="lg"
               className="btn-primary ml-4 max-w-fit"
             >
-              Get Started
+              {descriptions.navbar.cta}
             </CalModal>
             <SignedOut>
             <SignInButton />
@@ -92,7 +88,7 @@ const Navbar = () => {
                 size="lg"
                 className="btn-primary w-full max-w-fit mx-auto"
               >
-                Get Started
+                {descriptions.navbar.cta}
               </CalModal>
             </div>
           </div>

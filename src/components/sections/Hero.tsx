@@ -8,8 +8,11 @@ import { CustomerSignup } from '@/components/shared/CustomerSignup';
 import BrandBadge, { NYCBadge } from '@/components/brand/BrandBadge';
 import heroImage from '@/assets/ardrona-hero.jpg';
 import { cn } from '@/lib/utils';
+import { useDescriptions } from '@/hooks/use-descriptions';
 
 const Hero = () => {
+  const descriptions = useDescriptions();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -37,16 +40,16 @@ const Hero = () => {
 
           {/* Main Headline */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold mb-8 leading-tight animate-slide-up">
-            <span className="text-white drop-shadow-2xl">Airborne.</span>{' '}
-            <span className="text-white drop-shadow-2xl">Anytime.</span>{' '}
+            <span className="text-white drop-shadow-2xl">{descriptions.hero.title.line1}</span>{' '}
+            <span className="text-white drop-shadow-2xl">{descriptions.hero.title.line2}</span>{' '}
             <span className="text-gradient-primary animate-shimmer bg-gradient-to-r from-primary via-primary-light to-primary bg-[length:200%_100%]">
-              Anywhere.
+              {descriptions.hero.title.line3}
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl sm:text-2xl lg:text-3xl text-slate-200 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in opacity-90">
-            Ardrona is the drone delivery marketplace and logistics network—starting in NYC—connecting products, customers, and last-mile operations with sustainable autonomous flight.
+            {descriptions.hero.subtitle}
           </p>
 
           {/* CTA Section - Two Rows */}
@@ -55,10 +58,10 @@ const Hero = () => {
             <div className="flex flex-col items-center gap-6">
               <div className="flex items-center gap-2 mb-2">
               <h3 className="text-2xl font-heading font-semibold text-white">
-                Own a business in
+                {descriptions.hero.business.question}
               </h3>
               <BrandBadge className={cn('animate-float', 'text-white')}>
-                    🗽 NYC
+                    {descriptions.hero.badge.nyc}
                 </BrandBadge>
               <span className="text-2xl font-heading font-semibold text-white">?</span>
               </div>
@@ -69,7 +72,7 @@ const Hero = () => {
               className="btn-hero group animate-pulse-glow px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-2xl transition-all duration-400 max-w-fit"
               calLink="ayaan-kaifullah-ppsvgy/30min"
               >
-              Deliver by Drone <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              {descriptions.hero.business.cta} <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </CalModal>
             </div>
             {/* Divider Section */}
@@ -88,23 +91,23 @@ const Hero = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 pt-16 border-t border-white/20">
             <div className="text-center group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover-lift hover-glow">
               <div className="text-4xl font-heading font-bold text-primary mb-2 animate-bounce-subtle group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
-                2-5 min
+                {descriptions.hero.stats.delivery.value}
               </div>
-              <div className="text-slate-300 font-medium">Average Delivery</div>
+              <div className="text-slate-300 font-medium">{descriptions.hero.stats.delivery.label}</div>
               <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2 group-hover:w-16 transition-all duration-300"></div>
             </div>
             <div className="text-center group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover-lift hover-glow">
               <div className="text-4xl font-heading font-bold text-primary mb-2 animate-bounce-subtle group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" style={{animationDelay: '0.2s'}}>
-                Zero
+                {descriptions.hero.stats.emissions.value}
               </div>
-              <div className="text-slate-300 font-medium">Carbon Emissions</div>
+              <div className="text-slate-300 font-medium">{descriptions.hero.stats.emissions.label}</div>
               <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2 group-hover:w-16 transition-all duration-300"></div>
             </div>
             <div className="text-center group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover-lift hover-glow">
               <div className="text-4xl font-heading font-bold text-primary mb-2 animate-bounce-subtle group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" style={{animationDelay: '0.4s'}}>
-                24/7
+                {descriptions.hero.stats.operations.value}
               </div>
-              <div className="text-slate-300 font-medium">Operations</div>
+              <div className="text-slate-300 font-medium">{descriptions.hero.stats.operations.label}</div>
               <div className="w-12 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-2 group-hover:w-16 transition-all duration-300"></div>
             </div>
           </div>

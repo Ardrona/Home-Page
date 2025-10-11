@@ -1,39 +1,42 @@
 import React from 'react';
 import { Star, Clock, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useDescriptions } from '@/hooks/use-descriptions';
 
 const MarketplacePreview = () => {
+  const descriptions = useDescriptions();
+  
   const products = [
     {
       id: 1,
-      name: 'Artisan Coffee Beans',
-      seller: 'Brooklyn Roasters',
-      price: '$24.99',
-      rating: 4.9,
-      deliveryTime: '3-5 min',
-      distance: '0.8 mi',
+      name: descriptions.marketplace.products[0].name,
+      seller: descriptions.marketplace.products[0].seller,
+      price: descriptions.marketplace.products[0].price,
+      rating: descriptions.marketplace.products[0].rating,
+      deliveryTime: descriptions.marketplace.products[0].deliveryTime,
+      distance: descriptions.marketplace.products[0].distance,
       image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=300&fit=crop&crop=center',
       gradient: 'from-amber-500/20 to-amber-600/10',
     },
     {
       id: 2,
-      name: 'Fresh Organic Produce',
-      seller: 'Green Market NYC',
-      price: '$18.50',
-      rating: 4.8,
-      deliveryTime: '2-4 min',
-      distance: '0.5 mi',
+      name: descriptions.marketplace.products[1].name,
+      seller: descriptions.marketplace.products[1].seller,
+      price: descriptions.marketplace.products[1].price,
+      rating: descriptions.marketplace.products[1].rating,
+      deliveryTime: descriptions.marketplace.products[1].deliveryTime,
+      distance: descriptions.marketplace.products[1].distance,
       image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=300&fit=crop&crop=center',
       gradient: 'from-green-500/20 to-green-600/10',
     },
     {
       id: 3,
-      name: 'Tech Accessories',
-      seller: 'Manhattan Electronics',
-      price: '$45.99',
-      rating: 4.7,
-      deliveryTime: '4-6 min',
-      distance: '1.2 mi',
+      name: descriptions.marketplace.products[2].name,
+      seller: descriptions.marketplace.products[2].seller,
+      price: descriptions.marketplace.products[2].price,
+      rating: descriptions.marketplace.products[2].rating,
+      deliveryTime: descriptions.marketplace.products[2].deliveryTime,
+      distance: descriptions.marketplace.products[2].distance,
       image: 'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=300&fit=crop&crop=center',
       gradient: 'from-blue-500/20 to-blue-600/10',
     },
@@ -50,10 +53,16 @@ const MarketplacePreview = () => {
       <div className="container-ardrona relative z-10">
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold mb-6">
-            Marketplace <span className="text-gradient-primary">Preview</span>
+            {descriptions.marketplace.title.split(' ').map((word, index) => 
+              word === 'Preview' ? (
+                <span key={index} className="text-gradient-primary">{word}</span>
+              ) : (
+                <span key={index}>{word} </span>
+              )
+            )}
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Browse products from local businesses and get them delivered by drone in minutes
+            {descriptions.marketplace.subtitle}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-8"></div>
         </div>
@@ -121,7 +130,7 @@ const MarketplacePreview = () => {
         {/* Enhanced Browse More CTA */}
         <div className="text-center">
           <Button className="btn-hero-ghost group animate-float">
-            Browse Full Marketplace
+            {descriptions.marketplace.cta}
             <div className="ml-2 flex space-x-1">
               <div className="w-1 h-1 bg-current rounded-full animate-bounce"></div>
               <div className="w-1 h-1 bg-current rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>

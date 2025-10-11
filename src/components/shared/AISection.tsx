@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { useDescriptions } from '@/hooks/use-descriptions';
 import { 
   Brain, 
   Zap, 
@@ -18,52 +19,55 @@ import {
   Gauge
 } from 'lucide-react';
 
-const aiFeatures = [
+const getAIFeatures = (descriptions: any) => [
   {
     icon: Brain,
-    title: "Smart Route Optimization",
-    description: "AI-powered flight paths that adapt to weather, traffic, and airspace in real-time",
-    metric: "40% faster delivery",
+    title: descriptions.ai.features[0].title,
+    description: descriptions.ai.features[0].description,
+    metric: descriptions.ai.features[0].metric,
     color: "from-blue-500 to-cyan-400"
   },
   {
     icon: Target,
-    title: "Precision Landing",
-    description: "Computer vision ensures safe, accurate delivery to exact locations",
-    metric: "99.9% accuracy",
+    title: descriptions.ai.features[1].title,
+    description: descriptions.ai.features[1].description,
+    metric: descriptions.ai.features[1].metric,
     color: "from-primary to-green-400"
   },
   {
     icon: Shield,
-    title: "Predictive Safety",
-    description: "Machine learning prevents issues before they happen with real-time monitoring",
-    metric: "Zero incidents",
+    title: descriptions.ai.features[2].title,
+    description: descriptions.ai.features[2].description,
+    metric: descriptions.ai.features[2].metric,
     color: "from-purple-500 to-pink-400"
   },
   {
     icon: Gauge,
-    title: "Demand Forecasting",
-    description: "AI predicts delivery patterns to optimize fleet positioning and availability",
-    metric: "2x efficiency",
+    title: descriptions.ai.features[3].title,
+    description: descriptions.ai.features[3].description,
+    metric: descriptions.ai.features[3].metric,
     color: "from-orange-500 to-red-400"
   },
   {
     icon: MapPin,
-    title: "Dark Store Network",
-    description: "AI-managed micro-fulfillment centers in every locality for ultra-fast delivery",
-    metric: "< 60 seconds",
+    title: descriptions.ai.features[4].title,
+    description: descriptions.ai.features[4].description,
+    metric: descriptions.ai.features[4].metric,
     color: "from-emerald-500 to-teal-400"
   }
 ];
 
-const liveMetrics = [
-  { label: "Active Drones", value: 42, icon: Clock },
-  { label: "Cities Served", value: 3, icon: MapPin },
+const getLiveMetrics = (descriptions: any) => [
+  { label: descriptions.ai.liveMetrics[0].label, value: descriptions.ai.liveMetrics[0].value, icon: Clock },
+  { label: descriptions.ai.liveMetrics[1].label, value: descriptions.ai.liveMetrics[1].value, icon: MapPin },
   { label: "Avg Delivery Time", value: 3.2, suffix: "min", icon: Zap }
 ];
 
 export const AISection: React.FC = () => {
+  const descriptions = useDescriptions();
   const [activeFeature, setActiveFeature] = useState(0);
+  const aiFeatures = getAIFeatures(descriptions);
+  const liveMetrics = getLiveMetrics(descriptions);
   const [metrics, setMetrics] = useState(liveMetrics);
 
   // Simulate live metric updates
@@ -98,16 +102,21 @@ export const AISection: React.FC = () => {
         <div className="text-center mb-16">
           <Badge className="mb-6 bg-gradient-to-r from-primary/10 to-primary/20 text-primary border-primary/20">
             <Sparkles className="w-4 h-4 mr-2" />
-            AI-Powered Intelligence
+            {descriptions.ai.badge}
           </Badge>
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-slate-900 mb-6">
-            The Future of{' '}
-            <span className="text-gradient-primary">Smart Delivery</span>
+            {descriptions.ai.title.split('Smart Delivery').map((part, index) => 
+              index === 0 ? part : (
+                <span key={index}>
+                  <span className="text-gradient-primary">Smart Delivery</span>
+                </span>
+              )
+            )}
           </h2>
           
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Our AI doesn't just deliver packages—it learns, adapts, and evolves to make every flight safer, faster, and smarter.
+            {descriptions.ai.subtitle}
           </p>
         </div>
 
@@ -256,7 +265,7 @@ export const AISection: React.FC = () => {
         {/* CTA */}
         <div className="text-center mt-16">
           <Button className="btn-primary group">
-            Experience AI-Powered Delivery
+            {descriptions.ai.cta}
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
