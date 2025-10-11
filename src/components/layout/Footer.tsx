@@ -1,42 +1,19 @@
 import React from 'react';
 import { Twitter, Linkedin, Github, Mail } from 'lucide-react';
 import Logo from '../brand/Logo';
+import { useDescriptions } from '@/hooks/use-descriptions';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const descriptions = useDescriptions();
 
-  const footerLinks = {
-    Product: [
-      { name: 'Marketplace', href: '#marketplace' },
-      { name: 'Fleet Service', href: '#fleet' },
-      { name: 'Pricing', href: '#pricing' },
-      { name: 'API Documentation', href: '#docs' },
-    ],
-    Company: [
-      { name: 'About', href: '#about' },
-      { name: 'Careers', href: '#careers' },
-      { name: 'Blog', href: '#blog' },
-      { name: 'Press', href: '#press' },
-    ],
-    Resources: [
-      { name: 'Help Center', href: '#help' },
-      { name: 'Safety Guidelines', href: '#safety' },
-      { name: 'Compliance', href: '#compliance' },
-      { name: 'Status', href: '#status' },
-    ],
-    Legal: [
-      { name: 'Privacy Policy', href: '#privacy' },
-      { name: 'Terms of Service', href: '#terms' },
-      { name: 'Cookie Policy', href: '#cookies' },
-      { name: 'Security', href: '#security' },
-    ],
-  };
+  const footerLinks = descriptions.footer.links;
 
   const socialLinks = [
-    { name: 'Twitter', icon: Twitter, href: '#twitter' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#linkedin' },
-    { name: 'GitHub', icon: Github, href: '#github' },
-    { name: 'Email', icon: Mail, href: 'mailto:admin@ardrona.com' },
+    { name: 'Twitter', icon: Twitter, href: descriptions.footer.social[0].href },
+    { name: 'LinkedIn', icon: Linkedin, href: descriptions.footer.social[1].href },
+    { name: 'GitHub', icon: Github, href: descriptions.footer.social[2].href },
+    { name: 'Email', icon: Mail, href: descriptions.footer.social[3].href },
   ];
 
   return (
@@ -48,14 +25,11 @@ const Footer = () => {
             {/* Brand */}
             <div className="lg:col-span-2">
               <div className="flex items-center mb-6">
-                  <Logo variant="symbol" size="xl" className="h-9 w-9 text-white" />
-                {/* <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3">
-                </div> */}
-                <span className="font-heading font-bold text-2xl">Ardrona</span>
+                  <Logo variant="symbol" size="md" className="text-white" />
+                <span className="font-heading font-bold text-2xl">{descriptions.footer.brand.name}</span>
               </div>
               <p className="text-slate-300 leading-relaxed mb-6 max-w-md">
-                Building the future of drone delivery and logistics—starting in NYC and expanding to revolutionize 
-                how products move through cities.
+                {descriptions.footer.brand.description}
               </p>
               
               {/* Social Links */}
@@ -133,9 +107,9 @@ const Footer = () => {
               <span className="flex items-center">
                 🗽 Proudly serving NYC
               </span>
-              <span className="flex items-center">
+              {/* <span className="flex items-center">
                 ✈️ FAA Certified
-              </span>
+              </span> */}
             </div>
           </div>
         </div>

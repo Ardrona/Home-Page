@@ -1,27 +1,30 @@
 import React from 'react';
 import { Search, ShoppingCart, Zap } from 'lucide-react';
+import { useDescriptions } from '@/hooks/use-descriptions';
 
 const HowItWorks = () => {
+  const descriptions = useDescriptions();
+  
   const steps = [
     {
-      step: '01',
+      step: descriptions.howItWorks.steps[0].step,
       icon: Search,
-      title: 'Browse',
-      description: 'Explore products from local businesses and curated sellers in your area.',
+      title: descriptions.howItWorks.steps[0].title,
+      description: descriptions.howItWorks.steps[0].description,
       color: 'from-primary/20 to-primary/10',
     },
     {
-      step: '02',
+      step: descriptions.howItWorks.steps[1].step,
       icon: ShoppingCart,
-      title: 'Order',
-      description: 'Select your items and place your order with secure payment processing.',
+      title: descriptions.howItWorks.steps[1].title,
+      description: descriptions.howItWorks.steps[1].description,
       color: 'from-slate-200 to-slate-100',
     },
     {
-      step: '03',
+      step: descriptions.howItWorks.steps[2].step,
       icon: Zap,
-      title: 'Drone Delivery',
-      description: 'Watch your order arrive by drone in 2-5 minutes with real-time tracking.',
+      title: descriptions.howItWorks.steps[2].title,
+      description: descriptions.howItWorks.steps[2].description,
       color: 'from-primary/30 to-primary/20',
     },
   ];
@@ -31,10 +34,16 @@ const HowItWorks = () => {
       <div className="container-ardrona">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-slate-900 mb-6">
-            How It <span className="text-gradient-primary">Works</span>
+            {descriptions.howItWorks.title.split(' ').map((word, index) => 
+              word === 'Works' ? (
+                <span key={index} className="text-gradient-primary">{word}</span>
+              ) : (
+                <span key={index}>{word} </span>
+              )
+            )}
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Three simple steps to get your products delivered by drone in minutes
+            {descriptions.howItWorks.subtitle}
           </p>
         </div>
 
@@ -97,7 +106,7 @@ const HowItWorks = () => {
         {/* CTA */}
         <div className="text-center mt-16">
           <button className="btn-primary">
-            Start Your First Order
+            {descriptions.howItWorks.cta}
           </button>
         </div>
       </div>
