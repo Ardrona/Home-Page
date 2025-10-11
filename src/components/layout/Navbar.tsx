@@ -3,6 +3,9 @@ import { Logo } from '@/components/brand/Logo';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CalModal } from '@/components/shared/CalModal';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
+
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,6 +46,12 @@ const Navbar = () => {
             >
               Get Started
             </CalModal>
+            <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
           </div>
 
           {/* Mobile menu button */}
