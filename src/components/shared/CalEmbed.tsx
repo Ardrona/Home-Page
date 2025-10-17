@@ -8,7 +8,12 @@ import { cn } from '@/lib/utils';
 
 declare global {
   interface Window {
-    Cal: any;
+    Cal?: {
+      ns?: Record<string, (...args: unknown[]) => void>;
+      q?: unknown[];
+      loaded?: boolean;
+      (cmd: string, ...args: unknown[]): void;
+    };
   }
 }
 
@@ -32,49 +37,35 @@ export const CalEmbed: React.FC<CalEmbedProps> = ({
   useEffect(() => {
     // Load Cal.com embed script
     const script = document.createElement('script');
-    script.innerHTML = `
-      (function (C, A, L) { 
-        let p = function (a, ar) { a.q.push(ar); }; 
-        let d = C.document; 
-        C.Cal = C.Cal || function () { 
-          let cal = C.Cal; 
-          let ar = arguments; 
-          if (!cal.loaded) { 
-            cal.ns = {}; 
-            cal.q = cal.q || []; 
-            d.head.appendChild(d.createElement("script")).src = A; 
-            cal.loaded = true; 
-          } 
-          if (ar[0] === L) { 
-            const api = function () { p(api, arguments); }; 
-            const namespace = ar[1]; 
-            api.q = api.q || []; 
-            if(typeof namespace === "string"){
-              cal.ns[namespace] = cal.ns[namespace] || api;
-              p(cal.ns[namespace], ar);
-              p(cal, ["initNamespace", namespace]);
-            } else p(cal, ar); 
-            return;
-          } 
-          p(cal, ar); 
-        }; 
-      })(window, "https://app.cal.com/embed/embed.js", "init");
-      
-      Cal("init", "${namespace}", {origin:"https://app.cal.com"});
-      Cal.ns["${namespace}"]("ui", {
-        "theme":"light",
-        "cssVarsPerTheme": {
-          "light": {"cal-brand":"#8BC34A"},
-          "dark": {"cal-brand":"#8BC34A"}
-        },
-        "hideEventTypeDetails":false,
-        "layout":"week_view"
-      });
-    `;
+    script.src = 'https://app.cal.com/embed/embed.js';
+    script.async = true;
+
+    const onLoad = () => {
+      try {
+        if (window.Cal) {
+          window.Cal('init', namespace, { origin: 'https://app.cal.com' });
+          const ns = window.Cal.ns && window.Cal.ns[namespace];
+          if (typeof ns === 'function') {
+            ns('ui', {
+              theme: 'light',
+              cssVarsPerTheme: { light: { 'cal-brand': '#8BC34A' }, dark: { 'cal-brand': '#8BC34A' } },
+              hideEventTypeDetails: false,
+              layout: 'week_view',
+            });
+          }
+        }
+      } catch (e) {
+        // Fail silently if Cal isn't available yet
+        console.warn('Cal embed initialization failed', e);
+      }
+    };
+
+    script.addEventListener('load', onLoad);
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      script.removeEventListener('load', onLoad);
+      if (script.parentNode) document.head.removeChild(script);
     };
   }, [calLink, namespace]);
 

@@ -19,7 +19,18 @@ import {
   Gauge
 } from 'lucide-react';
 
-const getAIFeatures = (descriptions: any) => [
+type AIDescription = {
+  ai: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    cta: string;
+    features: { title: string; description: string; metric?: string }[];
+    liveMetrics: { label: string; value: number | string }[];
+  };
+};
+
+const getAIFeatures = (descriptions: AIDescription) => [
   {
     icon: Brain,
     title: descriptions.ai.features[0].title,
@@ -57,14 +68,14 @@ const getAIFeatures = (descriptions: any) => [
   }
 ];
 
-const getLiveMetrics = (descriptions: any) => [
+const getLiveMetrics = (descriptions: AIDescription) => [
   { label: descriptions.ai.liveMetrics[0].label, value: descriptions.ai.liveMetrics[0].value, icon: Clock },
   { label: descriptions.ai.liveMetrics[1].label, value: descriptions.ai.liveMetrics[1].value, icon: MapPin },
   { label: "Avg Delivery Time", value: 3.2, suffix: "min", icon: Zap }
 ];
 
 export const AISection: React.FC = () => {
-  const descriptions = useDescriptions();
+  const descriptions = useDescriptions() as AIDescription;
   const [activeFeature, setActiveFeature] = useState(0);
   const aiFeatures = getAIFeatures(descriptions);
   const liveMetrics = getLiveMetrics(descriptions);
@@ -85,7 +96,7 @@ export const AISection: React.FC = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [liveMetrics.length]);
 
   // Auto-rotate features
   useEffect(() => {
@@ -94,7 +105,7 @@ export const AISection: React.FC = () => {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [aiFeatures.length]);
 
   return (
     <section className="section-padding bg-gradient-to-br from-slate-50 via-white to-slate-100">
