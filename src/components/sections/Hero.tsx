@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import ParticleBackground from '@/components/ui/ParticleBackground';
 import { CalModal } from '@/components/shared/CalModal';
 import { CustomerSignup } from '@/components/shared/CustomerSignup';
+import { BusinessPartnershipModal } from '@/components/shared/BusinessPartnershipModal';
 import BrandBadge, { NYCBadge } from '@/components/brand/BrandBadge';
 import heroImage from '@/assets/ardrona-hero.jpg';
 import { cn } from '@/lib/utils';
@@ -56,24 +57,15 @@ const Hero = () => {
           <div className="space-y-12 animate-scale-in">
             {/* Business CTA Row */}
             <div className="flex flex-col items-center gap-6">
-              <div className="flex items-center gap-2 mb-2">
-              <h3 className="text-2xl font-heading font-semibold text-white">
+              <h3 className="text-xl font-heading font-semibold text-white text-center max-w-2xl">
                 {descriptions.hero.business.question}
               </h3>
-              <BrandBadge className={cn('animate-float', 'text-white')}>
-                    {descriptions.hero.badge.nyc}
-                </BrandBadge>
-              <span className="text-2xl font-heading font-semibold text-white">?</span>
-              </div>
 
-              <CalModal
-              variant="outline"
-              size="lg"
-              className="btn-hero group animate-pulse-glow px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-2xl transition-all duration-400 max-w-fit"
-              calLink="ayaan-kaifullah-ppsvgy/30min"
-              >
-              {descriptions.hero.business.cta} <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </CalModal>
+              <BusinessPartnershipModal>
+                <Button className="btn-hero group animate-pulse-glow px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-2xl transition-all duration-400 max-w-fit">
+                  {descriptions.hero.business.cta} <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </BusinessPartnershipModal>
             </div>
             {/* Divider Section */}
             <div className="flex items-center justify-center py-5">

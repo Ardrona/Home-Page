@@ -43,8 +43,6 @@ export const useScrollSnap = () => {
       const currentScrollTop = main.scrollTop;
       const sectionHeight = typeof window !== 'undefined' ? window.innerHeight : 0;
       const currentSectionIndex = sectionHeight > 0 ? Math.floor(currentScrollTop / sectionHeight) : 0;
-      
-      console.log(`⌨️ Keyboard navigation: scrollTop=${currentScrollTop}, sectionHeight=${sectionHeight}, currentIndex=${currentSectionIndex}`);
 
       switch (e.key) {
         case 'ArrowDown':

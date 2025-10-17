@@ -34,7 +34,7 @@ export const BrandBadge: React.FC<BrandBadgeProps> = ({
 export const NYCBadge: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <BrandBadge className={cn('animate-float', className)}>
-      🗽 NYC First • Expanding Soon
+      🗽 NYC Pilot Program Coming Soon
     </BrandBadge>
   );
 };

@@ -32,13 +32,7 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <CalModal 
-              variant="outline" 
-              size="lg"
-              className="btn-primary ml-4 max-w-fit"
-            >
-              {descriptions.navbar.cta}
-            </CalModal>
+
           </div>
 
           {/* Mobile menu button */}
@@ -73,15 +67,7 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <div className="pt-4">
-              <CalModal 
-                variant="outline" 
-                size="lg"
-                className="btn-primary w-full max-w-fit mx-auto"
-              >
-                {descriptions.navbar.cta}
-              </CalModal>
-            </div>
+
           </div>
         </div>
       )}

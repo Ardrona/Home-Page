@@ -11,6 +11,7 @@ import { Plane, MapPin, Mail, AlertCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { z } from 'zod';
 import Logo from '../brand/Logo';
+import { GOOGLE_APPS_SCRIPT_URL, FORM_CONFIG } from '@/config/forms';
 
 // Input validation schema
 const signupSchema = z.object({
@@ -78,13 +79,29 @@ export const CustomerSignup: React.FC<CustomerSignupProps> = ({ className }) => 
     setLoading(true);
     
     try {
-      // Simulate API call with validated data
-      // In production, send formData to your secure backend
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast.success('Thanks for signing up! We\'ll notify you when drone delivery is available in your area.');
-      setFormData({ email: '', city: '' });
+      // Submit to Google Sheets via Google Apps Script
+      const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formType: FORM_CONFIG.formTypes.CUSTOMER_SIGNUP,
+          ...formData,
+          timestamp: new Date().toISOString()
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success('Thanks for signing up! We\'ll notify you when drone delivery is available in your area.');
+        setFormData({ email: '', city: '' });
+      } else {
+        throw new Error(result.error || 'Submission failed');
+      }
     } catch (error) {
+      console.error('Form submission error:', error);
       toast.error('Something went wrong. Please try again.');
     } finally {
       setLoading(false);

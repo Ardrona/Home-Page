@@ -1,6 +1,14 @@
 # Ardrona Home Page
 
-## Project info
+## Project Info
+
+Ardrona is a modern delivery service platform connecting businesses and customers in NYC. This homepage features:
+
+- **Business Partnership Forms** - Restaurants and businesses can apply to partner with Ardrona
+- **Customer Signup** - Users can join the waitlist for delivery services
+- **Google Sheets Integration** - All form submissions are automatically saved to Google Sheets
+- **Modern UI** - Built with shadcn/ui components and Tailwind CSS
+- **Responsive Design** - Optimized for all devices
 
 
 
@@ -28,9 +36,32 @@ cd <YOUR_PROJECT_NAME>
 # Step 3: Install the necessary dependencies.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Set up environment variables (optional)
+cp .env.example .env
+# Edit .env with your Google Apps Script URL
+
+# Step 5: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
+
+## Google Sheets Integration Setup
+
+To enable form submissions to Google Sheets:
+
+1. **Deploy Google Apps Script**:
+   - Copy the code from `google-apps-script.js`
+   - Create a new project at [script.google.com](https://script.google.com)
+   - Deploy as Web App (Execute as: Me, Access: Anyone)
+
+2. **Configure Environment**:
+   - Copy the Web App URL
+   - Update `src/config/forms.ts` with your URL
+   - Or set `VITE_GOOGLE_APPS_SCRIPT_URL` in `.env`
+
+3. **Test Forms**:
+   - Business partnership form in hero section
+   - Customer signup form
+   - Check Google Sheets for submissions
 
 **Edit a file directly in GitHub**
 
