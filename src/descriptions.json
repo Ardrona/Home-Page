@@ -61,8 +61,8 @@
     }
   },
   "features": {
-    "title": "Complete Drone Ecosystem",
-    "subtitle": "From marketplace to logistics, we provide the complete infrastructure for autonomous aerial delivery",
+    "title": "Complete Drone Delivery Ecosystem",
+    "subtitle": "From marketplace to logistics, we are on a mission to provide the complete infrastructure for autonomous aerial delivery",
     "items": [
       {
         "title": "Marketplace",
@@ -78,7 +78,7 @@
       },
       {
         "title": "Fleet as a Service",
-        "description": "Use Ardrona's logistics layer in your own apps."
+        "description": "Use Ardrona’s comprehensive logistics services for all your delivery needs."
       }
     ],
     "cta": "Experience the Future"
@@ -100,10 +100,10 @@
       {
         "step": "03",
         "title": "Drone Delivery",
-        "description": "Watch your order arrive by drone in 2-5 minutes with real-time tracking."
+        "description": "Watch your order arrive by drone in minutes with real-time tracking."
       }
     ],
-    "cta": "Start Your First Order"
+    "cta": "GET THE APP"
   },
   "marketplace": {
     "title": "Marketplace Preview",
