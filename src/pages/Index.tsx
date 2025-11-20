@@ -47,24 +47,6 @@ const Index = () => {
           <HowItWorks />
         </section>
         <section 
-          ref={marketplaceRef}
-          className="scroll-snap-section section-transition section-fade-in"
-        >
-          <MarketplacePreview />
-        </section>
-        <section 
-          ref={aiSectionRef}
-          className="scroll-snap-section section-transition section-fade-in"
-        >
-          <AISection />
-        </section>
-        <section 
-          ref={fleetServiceRef}
-          className="scroll-snap-section section-transition section-fade-in"
-        >
-          <FleetService />
-        </section>
-        <section 
           ref={contactRef}
           className="scroll-snap-section section-transition section-fade-in"
         >
