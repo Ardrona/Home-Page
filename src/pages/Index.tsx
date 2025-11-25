@@ -4,7 +4,6 @@ import Hero from '@/components/sections/Hero';
 import Features from '@/components/sections/Features';
 import HowItWorks from '@/components/sections/HowItWorks';
 import MarketplacePreview from '@/components/sections/MarketplacePreview';
-import FleetService from '@/components/sections/FleetService';
 import ContactCTA from '@/components/sections/ContactCTA';
 import Footer from '@/components/layout/Footer';
 import AISection from '@/components/shared/AISection';
@@ -19,7 +18,6 @@ const Index = () => {
   const howItWorksRef = useScrollAnimation();
   const marketplaceRef = useScrollAnimation();
   const aiSectionRef = useScrollAnimation();
-  const fleetServiceRef = useScrollAnimation();
   const contactRef = useScrollAnimation();
   const footerRef = useScrollAnimation();
 
@@ -57,12 +55,6 @@ const Index = () => {
           className="scroll-snap-section section-transition section-fade-in"
         >
           <AISection />
-        </section>
-        <section 
-          ref={fleetServiceRef}
-          className="scroll-snap-section section-transition section-fade-in"
-        >
-          <FleetService />
         </section>
         <section 
           ref={contactRef}

@@ -1,6 +1,14 @@
 import React from 'react';
 import { Search, ShoppingCart, Zap } from 'lucide-react';
 import { useDescriptions } from '@/hooks/use-descriptions';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 const HowItWorks = () => {
   const descriptions = useDescriptions();
@@ -105,9 +113,23 @@ const HowItWorks = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <button className="btn-primary">
-            {descriptions.howItWorks.cta}
-          </button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <button className="btn-primary">
+                {descriptions.howItWorks.cta}
+              </button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-heading font-bold text-center">
+                  App Coming Soon!
+                </DialogTitle>
+                <DialogDescription className="text-center pt-4">
+                  We're working hard to bring you the Ardrona app. Stay tuned for updates!
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>

@@ -71,7 +71,7 @@ const getAIFeatures = (descriptions: AIDescription) => [
 const getLiveMetrics = (descriptions: AIDescription) => [
   { label: descriptions.ai.liveMetrics[0].label, value: descriptions.ai.liveMetrics[0].value, icon: Clock },
   { label: descriptions.ai.liveMetrics[1].label, value: descriptions.ai.liveMetrics[1].value, icon: MapPin },
-  { label: "Avg Delivery Time", value: 3.2, suffix: "min", icon: Zap }
+  { label: "Avg Delivery Time", value: 12.5, suffix: "min", icon: Zap }
 ];
 
 export const AISection: React.FC = () => {
@@ -89,7 +89,7 @@ export const AISection: React.FC = () => {
           return { ...metric, value: Math.floor(Math.random() * 10) + 40 };
         }
         if (index === 2) {
-          return { ...metric, value: Math.round((Math.random() * 2 + 2.5) * 10) / 10 };
+          return { ...metric, value: Math.round((Math.random() * 5 + 10) * 10) / 10 };
         }
         return metric;
       }));
