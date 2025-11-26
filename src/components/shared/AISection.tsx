@@ -8,13 +8,11 @@ import { Button } from '@/components/ui/button';
 import { useDescriptions } from '@/hooks/use-descriptions';
 import { 
   Brain, 
-  Zap, 
   Target, 
   Shield, 
   Cpu, 
   Sparkles,
   ArrowRight,
-  Clock,
   MapPin,
   Gauge
 } from 'lucide-react';
@@ -68,35 +66,10 @@ const getAIFeatures = (descriptions: AIDescription) => [
   }
 ];
 
-const getLiveMetrics = (descriptions: AIDescription) => [
-  { label: descriptions.ai.liveMetrics[0].label, value: descriptions.ai.liveMetrics[0].value, icon: Clock },
-  { label: descriptions.ai.liveMetrics[1].label, value: descriptions.ai.liveMetrics[1].value, icon: MapPin },
-  { label: "Avg Delivery Time", value: 12.5, suffix: "min", icon: Zap }
-];
-
 export const AISection: React.FC = () => {
   const descriptions = useDescriptions() as AIDescription;
   const [activeFeature, setActiveFeature] = useState(0);
   const aiFeatures = getAIFeatures(descriptions);
-  const liveMetrics = getLiveMetrics(descriptions);
-  const [metrics, setMetrics] = useState(liveMetrics);
-
-  // Simulate live metric updates
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setMetrics(prev => prev.map((metric, index) => {
-        if (index === 0) {
-          return { ...metric, value: Math.floor(Math.random() * 10) + 40 };
-        }
-        if (index === 2) {
-          return { ...metric, value: Math.round((Math.random() * 5 + 10) * 10) / 10 };
-        }
-        return metric;
-      }));
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [liveMetrics.length]);
 
   // Auto-rotate features
   useEffect(() => {
@@ -129,34 +102,6 @@ export const AISection: React.FC = () => {
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             {descriptions.ai.subtitle}
           </p>
-        </div>
-
-        {/* Live Metrics Dashboard */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {metrics.map((metric, index) => {
-            const IconComponent = metric.icon;
-            return (
-              <Card key={index} className="card-premium">
-                <CardContent className="p-6 text-center">
-                  <div className="flex justify-center mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                      <IconComponent className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div className="text-3xl font-heading font-bold text-slate-900 mb-2">
-                    {metric.value}{metric.suffix || ''}
-                  </div>
-                  <div className="text-slate-600">{metric.label}</div>
-                  <div className="w-full h-1 bg-slate-200 rounded-full mt-3 overflow-hidden">
-                    <div 
-                      className="h-full bg-gradient-to-r from-primary to-primary-hover rounded-full transition-all duration-1000"
-                      style={{ width: `${Math.min(Number(metric.value) / 50 * 100, 100)}%` }}
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
         </div>
 
         {/* Interactive AI Features */}
