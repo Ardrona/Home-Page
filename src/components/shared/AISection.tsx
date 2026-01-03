@@ -106,8 +106,8 @@ export const AISection: React.FC = () => {
 
         {/* Interactive AI Features */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          {/* Feature List - Spans 2 columns */}
-          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Feature List - Spans 3 columns */}
+          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4">
             {aiFeatures.map((feature, index) => {
               const IconComponent = feature.icon;
               const isActive = index === activeFeature;
@@ -154,67 +154,6 @@ export const AISection: React.FC = () => {
                 </Card>
               );
             })}
-          </div>
-
-          {/* Visual Display - Single column */}
-          <div className="relative lg:col-span-1">
-            <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 text-white overflow-hidden">
-              {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent" />
-                {[...Array(20)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-1 h-1 bg-primary rounded-full animate-pulse"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                      animationDelay: `${Math.random() * 2}s`
-                    }}
-                  />
-                ))}
-              </div>
-
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                    <Cpu className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-primary font-semibold">AI Mission Control</span>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-300">Neural Network Status</span>
-                    <span className="text-primary font-semibold">Active</span>
-                  </div>
-                  
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-300">Processing Power</span>
-                    <span className="text-primary font-semibold">847 TOPS</span>
-                  </div>
-                  
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-300">Real-time Decisions</span>
-                    <span className="text-primary font-semibold">1,200/sec</span>
-                  </div>
-
-                  <div className="mt-6 pt-6 border-t border-slate-700">
-                    <div className="text-center">
-                      <div className="text-3xl font-heading font-bold text-primary mb-2">
-                        99.94%
-                      </div>
-                      <div className="text-slate-300 text-sm">
-                        Mission Success Rate
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Glow Effect */}
-              <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-            </div>
           </div>
         </div>
 
