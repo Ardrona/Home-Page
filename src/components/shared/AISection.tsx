@@ -230,43 +230,6 @@ export const AISection: React.FC = () => {
                 ))}
               </div>
 
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                    <Cpu className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-primary font-semibold">AI Mission Control</span>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-300">Neural Network Status</span>
-                    <span className="text-primary font-semibold">Active</span>
-                  </div>
-                  
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-300">Processing Power</span>
-                    <span className="text-primary font-semibold">847 TOPS</span>
-                  </div>
-                  
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-300">Real-time Decisions</span>
-                    <span className="text-primary font-semibold">1,200/sec</span>
-                  </div>
-
-                  <div className="mt-6 pt-6 border-t border-slate-700">
-                    <div className="text-center">
-                      <div className="text-3xl font-heading font-bold text-primary mb-2">
-                        99.94%
-                      </div>
-                      <div className="text-slate-300 text-sm">
-                        Mission Success Rate
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               {/* Glow Effect */}
               <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-pulse" />
             </div>
